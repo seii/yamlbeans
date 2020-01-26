@@ -16,8 +16,13 @@
 
 package com.esotericsoftware.yamlbeans;
 
-import static com.esotericsoftware.yamlbeans.parser.EventType.*;
+import static com.esotericsoftware.yamlbeans.parser.EventType.DOCUMENT_START;
+import static com.esotericsoftware.yamlbeans.parser.EventType.MAPPING_END;
+import static com.esotericsoftware.yamlbeans.parser.EventType.SCALAR;
+import static com.esotericsoftware.yamlbeans.parser.EventType.SEQUENCE_END;
+import static com.esotericsoftware.yamlbeans.parser.EventType.STREAM_END;
 
+import java.io.Closeable;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -43,7 +48,7 @@ import com.esotericsoftware.yamlbeans.tokenizer.Tokenizer.TokenizerException;
 
 /** Deserializes Java objects from YAML.
  * @author <a href="mailto:misc@n4te.com">Nathan Sweet</a> */
-public class YamlReader {
+public class YamlReader implements Closeable {
 	private final YamlConfig config;
 	Parser parser;
 	private final Map<String, Object> anchors = new HashMap();
