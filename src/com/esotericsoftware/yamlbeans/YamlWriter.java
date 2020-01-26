@@ -46,8 +46,10 @@ import com.esotericsoftware.yamlbeans.parser.ScalarEvent;
 import com.esotericsoftware.yamlbeans.parser.SequenceStartEvent;
 import com.esotericsoftware.yamlbeans.scalar.ScalarSerializer;
 
-/** Serializes Java objects as YAML.
- * @author <a href="mailto:misc@n4te.com">Nathan Sweet</a> */
+/**
+ * Serializes Java objects as YAML.
+ * @author <a href="mailto:misc@n4te.com">Nathan Sweet</a>
+ */
 public class YamlWriter implements Closeable {
 	private final YamlConfig config;
 	private final Emitter emitter;
@@ -104,13 +106,19 @@ public class YamlWriter implements Closeable {
 		}
 	}
 
-	/** Returns the YAML emitter, which allows the YAML output to be configured. */
+	/**
+	 * Returns the YAML emitter, which allows the YAML output to be configured.
+	 * @return Emitter for YAML output
+	 */
 	public Emitter getEmitter () {
 		return emitter;
 	}
 
-	/** Writes any buffered objects, then resets the list of anchored objects.
-	 * @see WriteConfig#setAutoAnchor(boolean) */
+	/**
+	 * Writes any buffered objects, then resets the list of anchored objects.
+	 * @see WriteConfig#setAutoAnchor(boolean)
+	 * @throws YamlException If there are any problems writing the YAML output
+	 */
 	public void clearAnchors () throws YamlException {
 		for (Object object : queuedObjects)
 			writeInternal(object);
@@ -119,8 +127,10 @@ public class YamlWriter implements Closeable {
 		nextAnchor = 1;
 	}
 
-	/** Finishes writing any buffered output and releases all resources.
-	 * @throws YamlException If the buffered output could not be written or the writer could not be closed. */
+	/**
+	 * Finishes writing any buffered output and releases all resources.
+	 * @throws YamlException If the buffered output could not be written or the writer could not be closed.
+	 */
 	public void close () throws YamlException {
 		clearAnchors();
 		defaultValuePrototypes.clear();
