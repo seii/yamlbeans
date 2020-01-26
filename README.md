@@ -13,6 +13,17 @@ YamlBeans makes it easy to serialize and deserialize Java object graphs to and f
 Maven Central:
 http://repo1.maven.org/maven2/com/esotericsoftware/yamlbeans/yamlbeans/
 
+## Changes from upstream
+This fork is only intended to make minor additions to the upstream project which have not yet been merged. Should they be merged in the future, this fork will be unnecessary. All versions of this fork will simply add `-<number>` to the end of the upstream project's version for clarity.
+
+Pull requests from upstream implemented in this fork:
+- [#69 - Support try-with-resources in Java 7+ for YamlWriter and YamlReader](https://github.com/EsotericSoftware/yamlbeans/pull/69)
+- [#122 - Fix invalid characters (brackets) in Javadocs](https://github.com/EsotericSoftware/yamlbeans/pull/122)
+- <del>[#121 - Synchronize Maven and local lib versions of JUnit to 4.8.2](https://github.com/EsotericSoftware/yamlbeans/pull/121)</del> (ACCEPTED)
+
+Personal preferences (not submitted upstream):
+* Javadocs JAR now automatically build when using Maven's `package` or `install` goals
+
 ## Basic deserialization
 
 The YamlReader class is used to deserialize YAML to Java objects. The following YAML defines a Map with four entries. The "phone numbers" entry is a List of two items, each of which is a Map.
