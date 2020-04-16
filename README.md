@@ -18,11 +18,11 @@ This fork is only intended to make minor additions to the upstream project which
 
 Pull requests from upstream implemented in this fork:
 - [#69 - Support try-with-resources in Java 7+ for YamlWriter and YamlReader](https://github.com/EsotericSoftware/yamlbeans/pull/69)
-- [#122 - Fix invalid characters (brackets) in Javadocs](https://github.com/EsotericSoftware/yamlbeans/pull/122)
+- <del>[#122 - Fix invalid characters (brackets) in Javadocs](https://github.com/EsotericSoftware/yamlbeans/pull/122)</del> (ACCEPTED)
 - <del>[#121 - Synchronize Maven and local lib versions of JUnit to 4.8.2](https://github.com/EsotericSoftware/yamlbeans/pull/121)</del> (ACCEPTED)
 
 Personal preferences (not submitted upstream):
-* Javadocs JAR now automatically build when using Maven's `package` or `install` goals
+* Javadocs JAR now automatically builds when using Maven's `package` or `install` goals
 
 ## Basic deserialization
 
